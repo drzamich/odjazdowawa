@@ -1,5 +1,4 @@
 import React from "react";
-//github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/prop-types.md
 import { useQuery } from "@tanstack/react-query";
 import { FlatList, Text, View } from "react-native";
 

@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { View, StyleSheet, Text } from "react-native";
+
 import Picker from "react-native-ui-lib/picker";
 
 import { stops } from "../data/stops";
@@ -18,14 +20,31 @@ export const StopSelect = ({ curSelStopId, setCurSelStopId }) => {
   const parsedAndFilteredStops = parseAndFilterStops(searchStr);
 
   return (
-    <Picker
-      items={parsedAndFilteredStops}
-      placeholder="Select stop"
-      value={curSelStopId}
-      showSearch={true}
-      useSafeArea={true}
-      onChange={setCurSelStopId}
-      onSearchChange={setSearchStr}
-    />
+    <View style={styles.container}>
+      <Picker
+        items={parsedAndFilteredStops}
+        placeholder="Select stop"
+        value={curSelStopId}
+        showSearch={true}
+        useSafeArea={true}
+        onChange={setCurSelStopId}
+        onSearchChange={setSearchStr}
+        renderPicker={(selectedItem, itemLabel) => {
+          const label = itemLabel ?? "Wybierz przystanek";
+          return <Text style={styles.picker}>{label}</Text>;
+        }}
+      />
+    </View>
   );
 };
+
+export const styles = StyleSheet.create({
+  container: {
+    paddingTop: 5,
+    paddingBottom: 5,
+  },
+  picker: {
+    fontSize: 20,
+    fontWeight: 800,
+  },
+});
