@@ -1,10 +1,12 @@
+import React from "react";
+//github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/prop-types.md
 import { useQuery } from "@tanstack/react-query";
 import { FlatList, Text, View } from "react-native";
 
 export const StopTimetable = ({ id }) => {
   const url = `https://public-sip-api.tw.waw.pl/api/GetLatestPanelPredictions?userCode=WWW&userApiKey=3aAhqA2/*RWsmvy}P8AsxgtFZ&stopId=${id}`;
 
-  const { isPending, error, data } = useQuery({
+  const { isPending, data } = useQuery({
     queryKey: [`timetable-${id}`],
     queryFn: () => fetch(url).then((res) => res.json()),
   });
