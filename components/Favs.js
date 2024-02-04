@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View, Button } from "react-native";
 import { useStorage } from "./StorageProvider";
+import { StopTimetable } from "./StopTimetable";
 
 export const Favs = () => {
   const { favs, removeFav } = useStorage();
@@ -11,7 +12,7 @@ export const Favs = () => {
         <Text style={styles.header}>Favourites</Text>
         {favs.map((fav) => (
           <View key={fav}>
-            <Text>{fav}</Text>
+            <StopTimetable id={fav} />
             <Button title="Remove fav" onPress={() => removeFav(fav)} />
           </View>
         ))}
