@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Picker from "react-native-ui-lib/picker";
 
-import { stops } from "./stops";
+import { stops } from "../data/stops";
 
 const parseAndFilterStops = (search) => {
   return stops
