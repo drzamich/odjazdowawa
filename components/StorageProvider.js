@@ -31,7 +31,6 @@ const saveData = async (data) => {
 
 export const [StorageProvider, useStorage] = constate(() => {
   const [storage, setStorage] = useState(initialStorage);
-  console.log(storage);
 
   useEffect(() => {
     const setUp = async () => {
