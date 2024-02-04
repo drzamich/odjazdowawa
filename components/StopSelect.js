@@ -36,7 +36,7 @@ export const StopSelect = ({ curSelStopId, setCurSelStopId }) => {
         onSearchChange={setSearchStr}
         renderPicker={(selectedItem, itemLabel) => {
           const label = itemLabel ?? "Wybierz przystanek";
-          return <Text style={styles.picker}>{label}</Text>;
+          return <Text style={styles.picker}>{label} 🔎</Text>;
         }}
       />
     </View>
@@ -51,5 +51,7 @@ export const styles = StyleSheet.create({
   picker: {
     fontSize: 20,
     fontWeight: 800,
+    backgroundColor: "lightgray",
+    padding: 5,
   },
 });

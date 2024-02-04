@@ -19,7 +19,11 @@ export const Main = () => {
         />
         {curSelStopId ? (
           <>
-            <StopTimetable id={curSelStopId} key={curSelStopId} />
+            <StopTimetable
+              id={curSelStopId}
+              key={curSelStopId}
+              showName={false}
+            />
             <AddToFavButton curSelStopId={curSelStopId} />
           </>
         ) : null}
@@ -36,6 +40,7 @@ export const styles = StyleSheet.create({
   },
   container: {
     paddingLeft: 5,
+    paddingRight: 5,
   },
   header: {
     fontSize: 30,
