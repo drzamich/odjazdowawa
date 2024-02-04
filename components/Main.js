@@ -3,6 +3,8 @@ import { StyleSheet, Text, View, SafeAreaView } from "react-native";
 
 import { StopTimetable } from "./StopTimetable";
 import { StopSelect } from "./StopSelect";
+import { AddToFavButton } from "./AddToFavButton";
+import { Favs } from "./Favs";
 
 export const Main = () => {
   const [curSelStopId, setCurSelStopId] = useState(null);
@@ -16,8 +18,12 @@ export const Main = () => {
           curSelStopId={curSelStopId}
         />
         {curSelStopId ? (
-          <StopTimetable id={curSelStopId} key={curSelStopId} />
+          <>
+            <StopTimetable id={curSelStopId} key={curSelStopId} />
+            <AddToFavButton curSelStopId={curSelStopId} />
+          </>
         ) : null}
+        <Favs />
       </View>
     </SafeAreaView>
   );
