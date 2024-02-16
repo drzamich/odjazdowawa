@@ -5,6 +5,7 @@ import { StopTimetable } from "./StopTimetable";
 import { StopSelect } from "./StopSelect";
 import { AddToFavButton } from "./AddToFavButton";
 import { Favs } from "./Favs";
+import { Closest } from "./Closest";
 
 export const Main = () => {
   const [curSelStopId, setCurSelStopId] = useState(null);
@@ -27,6 +28,7 @@ export const Main = () => {
             <AddToFavButton curSelStopId={curSelStopId} />
           </>
         ) : null}
+        <Closest />
         <Favs />
       </View>
     </SafeAreaView>
